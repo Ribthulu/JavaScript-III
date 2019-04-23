@@ -16,53 +16,53 @@
 // Principle 1
 
 // code example for Window Binding
-function one(x) {
-  console.log(this);
-  return "Hello " + x;
-}
-console.log(one("jupiter"));
+// function one(x) {
+//   console.log(this);
+//   return "Hello " + x;
+// }
+// console.log(one("jupiter"));
 // Principle 2
 
 // code example for Implicit Binding
-const two = {
-  prop1: "value1",
-  prop2: "value2",
-  prop3: function(value3){
-    console.log(this);
-    return "this is " + value3;
-  }
-};
-console.log(two.prop3("an implicit Binding"));
+// const two = {
+//   prop1: "value1",
+//   prop2: "value2",
+//   prop3: function(value3){
+//     console.log(this);
+//     return "this is " + value3;
+//   }
+// };
+// console.log(two.prop3("an implicit Binding"));
 // Principle 3
 
 // code example for New Binding
-function Three(y){
-  this.one = y.one;
-  this.two = y.two;
-  this.three = y.three;
-}
-Three.prototype.whoa = function(){
-  return `${this.one} + ${this.two} + ${this.three}`;
-};
-const example = new Three({
-  one: "what",
-  two: "is",
-  three: "this?"
-});
-console.log(example);
-console.log(example.whoa());
-// Principle 4
-
-// code example for Explicit Binding
-const POTUS = {
-  name: "Donald",
-  age: 174,
-  default: function(){
-    return `I did not collude with Russia and I am the greatest president ever`;
-  }
-};
-const family = ["Evanka", "Don Jr", "Melania"];
-function showtime(x,y,z){
-  return `My fellow Americans, I am ${this.name} and I did not collude with Russia, just ask ${x} or ${y} or ${z}`;
-}
-console.log(showtime.apply(POTUS,family));
+// function Three(y){
+//   this.one = y.one;
+//   this.two = y.two;
+//   this.three = y.three;
+// }
+// Three.prototype.whoa = function(){
+//   return `${this.one} + ${this.two} + ${this.three}`;
+// };
+// const example = new Three({
+//   one: "what",
+//   two: "is",
+//   three: "this?"
+// });
+// console.log(example);
+// console.log(example.whoa());
+// // Principle 4
+//
+// // code example for Explicit Binding
+// const POTUS = {
+//   name: "Donald",
+//   age: 174,
+//   default: function(){
+//     return `I did not collude with Russia and I am the greatest president ever`;
+//   }
+// };
+// const family = ["Evanka", "Don Jr", "Melania"];
+// function showtime(x,y,z){
+//   return `My fellow Americans, I am ${this.name} and I did not collude with Russia, just ask ${x} or ${y} or ${z}`;
+// }
+// console.log(showtime.apply(POTUS,family));
