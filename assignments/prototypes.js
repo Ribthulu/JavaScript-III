@@ -19,13 +19,11 @@
   * dimensions (These represent the character's size in the video game)
   * destroy() // prototype method that returns: `${this.name} was removed from the game.`
 */
-
 function GameObject(x){
   this.createdAt = x.createdAt;
   this.name = x.name;
   this.dimensions = x.dimensions;
 }
-
 GameObject.prototype.destroy = function() {
   return `${this.name} was removed from the game.`;
 };
@@ -37,19 +35,15 @@ GameObject.prototype.destroy = function() {
   * takeDamage() // prototype method -> returns the string '<object name> took damage.'
   * should inherit destroy() from GameObject's prototype
 */
-
 function CharacterStats(y){
   // this.healthPoints = y.healthPoints;
   GameObject.call(this,y);
   this.healthPoints = y.healthPoints;
 }
-
 CharacterStats.prototype = Object.create(GameObject.prototype);
-
 CharacterStats.prototype.takeDamage = function(){
   return `${this.name} took damage.`;
 };
-
 /*
   === Humanoid (Having an appearance or character resembling that of a human.) ===
   * team
@@ -59,13 +53,6 @@ CharacterStats.prototype.takeDamage = function(){
   * should inherit destroy() from GameObject through CharacterStats
   * should inherit takeDamage() from CharacterStats
 */
-//
-// function inChar(charAtt){
-//   CharacterStats.call(this, charAtt);
-//   this.name = charAtt.name;
-//   this.takeDamage = charAtt.takeDamage;
-// }
-//
 var Humanoid = function(z){
   // this.team = z.team;
   // this.weapons = z.weapons;
@@ -75,9 +62,7 @@ var Humanoid = function(z){
   this.weapons = z.weapons;
   this.language = z.language;
 };
-
 Humanoid.prototype = Object.create(CharacterStats.prototype);
-
 Humanoid.prototype.greet = function(){
   return `${this.name} offers a greeting in ${this.language}`;
 };
@@ -89,7 +74,6 @@ Humanoid.prototype.greet = function(){
 */
 
 // Test you work by un-commenting these 3 objects and the list of console logs below:
-
 
   const mage = new Humanoid({
     createdAt: new Date(),
